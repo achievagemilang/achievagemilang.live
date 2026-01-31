@@ -492,7 +492,7 @@ The application follows a Client-Server model with a Microservices-lite approach
     description:
       'A modern, full-stack URL shortener built for speed and reliability, featuring a scalable microservices architecture.',
     image: '/project/url-shortener.jpg',
-    link: 'https://github.com/achievagemilang/url-shortener',
+    link: 'https://link.achievagemilang.live',
     tags: [
       'Next.js',
       'TypeScript',
