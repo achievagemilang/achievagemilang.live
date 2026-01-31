@@ -485,4 +485,53 @@ The application follows a Client-Server model with a Microservices-lite approach
       'Designing anti-cheat heuristics for client-side games',
     ],
   },
+  {
+    id: 12,
+    title: 'High-Performance URL Shortener',
+    slug: 'high-performance-url-shortener',
+    description:
+      'A modern, full-stack URL shortener built for speed and reliability, featuring a scalable microservices architecture.',
+    image: '/project/url-shortener.jpg',
+    link: 'https://github.com/achievagemilang/url-shortener',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Go',
+      'Redis',
+      'PostgreSQL',
+      'Docker',
+      'Nginx',
+      'DigitalOcean',
+      'GitHub Actions',
+    ],
+    year: 2026,
+    author: {
+      name: 'Achieva Futura Gemilang',
+      avatar: '/AGLogoRevamped.png',
+    },
+    readTime: '5 min read',
+    tldr: [
+      'Sub-10ms redirects with Redis caching',
+      'Token bucket rate limiting',
+      'Full microservices containerization',
+      'Automated CI/CD with GHCR',
+    ],
+    fullDescription: `A modern, full-stack URL shortener built for speed and reliability, featuring a scalable microservices architecture.
+    
+    This application allows users to shorten URLs, create custom aliases, track analytics, and generate QR codes. It is built with a robust tech stack including Next.js, Go, Redis, and PostgreSQL, ensuring high performance and reliability.`,
+    features: [
+      'Shorten URLs instantly',
+      'Custom Aliases',
+      'Real-time Analytics',
+      'QR Code Generation',
+      'Rate Limiting',
+    ],
+    lessonsLearned: [
+      'Optimizing read-heavy workloads with Redis',
+      'Implementing rate limiting algorithms in Go',
+      'Containerizing a polyrepo architecture',
+      'Setting up automated CI/CD pipelines',
+    ],
+  },
 ];
