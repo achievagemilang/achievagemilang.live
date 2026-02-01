@@ -123,7 +123,7 @@ export const professionalExperiencesList = [
     description:
       'Leading superapp in Southeast Asia, providing ride-hailing, food delivery, and digital payments ($19.57B market cap).',
     achievements: ['GrabFood 🛵🥘'],
-    logoUrl: '/company/Grab.jpg',
+    logoUrl: '/company/Grab.svg',
     website: 'https://www.grab.com/',
     type: 'Internship',
   },
@@ -266,7 +266,7 @@ export const experiencesList = [
 ];
 
 // Featured project IDs - update this array to select which projects appear on the home page
-export const featuredProjectIds: number[] = [9, 8, 7, 6];
+export const featuredProjectIds: number[] = [9, 12, 7, 6];
 
 export const projectList = [
   {

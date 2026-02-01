@@ -484,14 +484,21 @@ export default function Experience({ experiences }: ExperienceProps) {
                                       <h4 className="text-lg font-semibold text-foreground mb-1">
                                         {exp.position}
                                       </h4>
-                                      <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-                                        <Calendar size={12} className="flex-shrink-0" />
-                                        <span>
-                                          {format(new Date(exp.startDate), 'MMM yyyy')} -{' '}
-                                          {exp.endDate
-                                            ? format(new Date(exp.endDate), 'MMM yyyy')
-                                            : t.home.experience.present}
-                                        </span>
+                                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-muted-foreground">
+                                        <div className="flex items-center gap-1.5">
+                                          <Calendar size={12} className="flex-shrink-0" />
+                                          <span>
+                                            {format(new Date(exp.startDate), 'MMM yyyy')} -{' '}
+                                            {exp.endDate
+                                              ? format(new Date(exp.endDate), 'MMM yyyy')
+                                              : t.home.experience.present}
+                                          </span>
+                                        </div>
+                                        {exp.type && (
+                                          <span className="inline-flex items-center rounded-md bg-secondary/50 px-2 py-0.5 text-xs text-secondary-foreground ring-1 ring-inset ring-secondary/50">
+                                            {exp.type}
+                                          </span>
+                                        )}
                                       </div>
                                     </div>
                                     <ul className="space-y-2.5">
