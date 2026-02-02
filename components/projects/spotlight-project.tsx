@@ -3,10 +3,18 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import ImageWithSkeleton from '@/components/ui/image-with-skeleton';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useLanguage } from '@/context/language-context';
 import { TechStackBadge, getTechStackInfo } from '@/lib/tech-stack-logos';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink,
+  Sparkles,
+} from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -30,6 +38,7 @@ interface SpotlightProjectProps {
 export default function SpotlightProject({ project, index = 0 }: SpotlightProjectProps) {
   const { t, language } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
+  const [showAllTags, setShowAllTags] = useState(false);
 
   // Filter tech stack tags
   const techStackTags = project.tags.filter((tag) => getTechStackInfo(tag) !== null);
@@ -115,9 +124,75 @@ export default function SpotlightProject({ project, index = 0 }: SpotlightProjec
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {techStackTags.map((tag) => (
-                    <TechStackBadge key={tag} tag={tag} />
+                  {techStackTags.slice(0, 5).map((tag, index) => (
+                    <motion.div
+                      key={tag}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                    >
+                      <TechStackBadge tag={tag} />
+                    </motion.div>
                   ))}
+
+                  <AnimatePresence>
+                    {showAllTags && (
+                      <>
+                        {techStackTags.slice(5).map((tag, index) => (
+                          <motion.div
+                            key={tag}
+                            initial={{ opacity: 0, scale: 0.8, y: -5 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.8, y: -5 }}
+                            transition={{
+                              duration: 0.25,
+                              delay: index * 0.04,
+                              ease: [0.4, 0, 0.2, 1],
+                            }}
+                          >
+                            <TechStackBadge tag={tag} />
+                          </motion.div>
+                        ))}
+                      </>
+                    )}
+                  </AnimatePresence>
+
+                  {techStackTags.length > 5 && (
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <motion.button
+                            onClick={() => setShowAllTags(!showAllTags)}
+                            className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/80 hover:bg-muted border border-border/50 transition-all duration-200 text-xs font-medium hover:border-primary/30"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {showAllTags ? (
+                              <>
+                                <ChevronUp className="h-3 w-3" />
+                                <span>{t.project.card.less}</span>
+                              </>
+                            ) : (
+                              <>
+                                <span>+{techStackTags.length - 5}</span>
+                                <ChevronDown className="h-3 w-3" />
+                              </>
+                            )}
+                          </motion.button>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" className="bg-popover/95 backdrop-blur-sm">
+                          <p className="text-xs">
+                            {showAllTags
+                              ? t.project.card.showLess
+                              : t.project.card.showMore.replace(
+                                  '{count}',
+                                  String(techStackTags.length)
+                                )}
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  )}
                 </div>
 
                 {/* Actions */}
