@@ -266,7 +266,7 @@ export const experiencesList = [
 ];
 
 // Featured project IDs - update this array to select which projects appear on the home page
-export const featuredProjectIds: number[] = [9, 12, 11, 6];
+export const featuredProjectIds: number[] = [9, 12];
 
 export const projectList = [
   {
