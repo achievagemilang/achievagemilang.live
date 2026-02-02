@@ -1,6 +1,6 @@
 'use client';
 
-import ProjectCard from '@/components/projects/project-card';
+import SpotlightProject from '@/components/projects/spotlight-project';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
@@ -14,6 +14,8 @@ interface Project {
   link: string;
   tags: string[];
   year?: number;
+  slug?: string;
+  tldr?: string[];
 }
 
 interface ProjectsProps {
@@ -45,32 +47,31 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <motion.section
       ref={sectionRef}
-      className="py-16"
+      className="py-16 md:py-24"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
       <div className="container">
         <motion.div
-          className="flex justify-between items-center mb-12"
+          className="flex justify-between items-center mb-16 md:mb-24"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold">{t.home.projects.title}</h2>
-          <Button asChild variant="outline">
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            {t.home.projects.title}
+          </h2>
+          <Button asChild variant="outline" size="lg" className="rounded-full">
             <Link href="/projects">{t.home.projects.viewAll}</Link>
           </Button>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={container}
-          initial="hidden"
-          animate={isInView ? 'show' : 'hidden'}
-        >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} variant="featured" />
+        <motion.div variants={container} initial="hidden" animate={isInView ? 'show' : 'hidden'}>
+          {projects.map((project, index) => (
+            <motion.div key={project.id} variants={item}>
+              <SpotlightProject project={project} index={index} />
+            </motion.div>
           ))}
         </motion.div>
       </div>
