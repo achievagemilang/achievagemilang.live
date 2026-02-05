@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     title: 'About | Achieva Futura Gemilang',
     description:
       'Learn more about Achieva Futura Gemilang, a lifelong learner and software engineer, who is passionate about building scalable and efficient systems.',
-    url: 'https://achievagemilang.live/about',
+    url: 'https://achievagemilang.dev/about',
     type: 'website',
     images: [
       {
-        url: 'https://achievagemilang.live/AGLogoRevamped.png',
+        url: 'https://achievagemilang.dev/AGLogoRevamped.png',
         width: 1200,
         height: 630,
         alt: 'Achieva Futura Gemilang',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'About | Achieva Futura Gemilang',
     description:
       'Learn more about Achieva Futura Gemilang, a lifelong learner and software engineer, who is passionate about building scalable and efficient systems.',
-    images: ['https://achievagemilang.live/AGLogoRevamped.png'],
+    images: ['https://achievagemilang.dev/AGLogoRevamped.png'],
   },
 };
 

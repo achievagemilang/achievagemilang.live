@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js, showcasing projects, blog posts, and professional experience. Features an AI-powered chat assistant, contact form, and beautiful animations.
 
-🌐 **Live Demo**: [achievagemilang.live](https://achievagemilang.live)
+🌐 **Live Demo**: [achievagemilang.dev](https://achievagemilang.dev)
 
 ## ✨ Features
 
@@ -381,7 +381,7 @@ This project is private and personal. All rights reserved.
 
 A software engineer with a product-driven mindset, specializing in mobile and backend development. Currently focused on leveraging AI agents to create next-generation products.
 
-- Website: [achievagemilang.live](https://achievagemilang.live)
+- Website: [achievagemilang.dev](https://achievagemilang.dev)
 - Email: achievafuturagemilang@gmail.com
 
 ## 🙏 Acknowledgments

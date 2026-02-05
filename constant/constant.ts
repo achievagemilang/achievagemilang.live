@@ -445,7 +445,7 @@ We utilized a microservices-inspired architecture (modular monolith) to ensure s
     description:
       'A real-time, 1v1 competitive arcade game inspired by the classic Chrome Dino runner, synchronizing gameplay between two remote players.',
     image: '/project/dino-multiplayer.png',
-    link: 'https://dino.achievagemilang.live',
+    link: 'https://dino.achievagemilang.dev',
     tags: [
       'Next.js',
       'Go',
@@ -492,7 +492,7 @@ The application follows a Client-Server model with a Microservices-lite approach
     description:
       'A modern, full-stack URL shortener built for speed and reliability, featuring a scalable microservices architecture.',
     image: '/project/url-shortener.jpg',
-    link: 'https://link.achievagemilang.live',
+    link: 'https://link.achievagemilang.dev',
     tags: [
       'Go',
       'DigitalOcean',

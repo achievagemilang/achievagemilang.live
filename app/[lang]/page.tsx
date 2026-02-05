@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: `Home | Achieva Futura Gemilang`,
       description: t.hero.description,
-      url: `https://achievagemilang.live/${lang}`,
+      url: `https://achievagemilang.dev/${lang}`,
       type: 'website',
       images: [
         {
-          url: 'https://achievagemilang.live/AGLogoRevamped.png',
+          url: 'https://achievagemilang.dev/AGLogoRevamped.png',
           width: 1200,
           height: 630,
           alt: 'Achieva Futura Gemilang',
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       card: 'summary_large_image',
       title: `Home | Achieva Futura Gemilang`,
       description: t.hero.description,
-      images: ['https://achievagemilang.live/AGLogoRevamped.png'],
+      images: ['https://achievagemilang.dev/AGLogoRevamped.png'],
     },
   };
 }

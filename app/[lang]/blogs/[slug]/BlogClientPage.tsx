@@ -22,7 +22,7 @@ interface BlogPostClientProps {
 }
 
 export default function BlogPostClient({ post, allPosts }: BlogPostClientProps) {
-  const url = `https://achievagemilang.live/blogs/${post.slug}`;
+  const url = `https://achievagemilang.dev/blogs/${post.slug}`;
   const publishedTime = new Date(post.date).toISOString();
 
   // Fetch and increment view count from Redis
@@ -37,20 +37,20 @@ export default function BlogPostClient({ post, allPosts }: BlogPostClientProps) 
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: 'https://achievagemilang.live/AGLogoRevamped.png',
+    image: 'https://achievagemilang.dev/AGLogoRevamped.png',
     datePublished: publishedTime,
     dateModified: publishedTime,
     author: {
       '@type': 'Person',
       name: 'Achieva Futura Gemilang',
-      url: 'https://achievagemilang.live',
+      url: 'https://achievagemilang.dev',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Achieva Futura Gemilang',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://achievagemilang.live/AGLogoRevamped.png',
+        url: 'https://achievagemilang.dev/AGLogoRevamped.png',
       },
     },
     mainEntityOfPage: {
@@ -71,13 +71,13 @@ export default function BlogPostClient({ post, allPosts }: BlogPostClientProps) 
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://achievagemilang.live',
+        item: 'https://achievagemilang.dev',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Writes',
-        item: 'https://achievagemilang.live/blogs',
+        item: 'https://achievagemilang.dev/blogs',
       },
       {
         '@type': 'ListItem',

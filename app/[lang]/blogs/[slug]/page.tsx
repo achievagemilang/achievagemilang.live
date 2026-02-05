@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://achievagemilang.live/blogs/${slug}`;
+  const url = `https://achievagemilang.dev/blogs/${slug}`;
   const publishedTime = new Date(post.date).toISOString();
   const tags = post.tags || [];
   const keywords = tags.join(', ');
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${post.title} | Achieva Futura Gemilang`,
     description: post.excerpt,
     keywords: keywords,
-    authors: [{ name: 'Achieva Futura Gemilang', url: 'https://achievagemilang.live' }],
+    authors: [{ name: 'Achieva Futura Gemilang', url: 'https://achievagemilang.dev' }],
     creator: 'Achieva Futura Gemilang',
     publisher: 'Achieva Futura Gemilang',
     alternates: {
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: 'Achieva Futura Gemilang',
       images: [
         {
-          url: 'https://achievagemilang.live/AGLogoRevamped.png',
+          url: 'https://achievagemilang.dev/AGLogoRevamped.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${post.title} | Achieva Futura Gemilang`,
       description: post.excerpt,
       creator: '@achievagemilang',
-      images: ['https://achievagemilang.live/AGLogoRevamped.png'],
+      images: ['https://achievagemilang.dev/AGLogoRevamped.png'],
     },
     other: {
       'article:published_time': publishedTime,

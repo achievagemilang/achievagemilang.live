@@ -26,7 +26,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'achievagemilang.live',
+        hostname: 'achievagemilang.dev',
       },
     ],
   },

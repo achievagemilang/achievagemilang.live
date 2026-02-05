@@ -1,16 +1,21 @@
-import type { Metadata } from 'next';
-import BlogClientPage from './BlogClientPage';
 import PageTransition from '@/components/util/page-transition';
 import { getAllPosts } from '@/lib/mdx';
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import BlogClientPage from './BlogClientPage';
 
-function BlogCollectionStructuredData({ posts }: { posts: Awaited<ReturnType<typeof getAllPosts>> }) {
+function BlogCollectionStructuredData({
+  posts,
+}: {
+  posts: Awaited<ReturnType<typeof getAllPosts>>;
+}) {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Writes | Achieva Futura Gemilang',
-    description: 'Articles and thoughts on software engineering, system design, and life-long learning.',
-    url: 'https://achievagemilang.live/blogs',
+    description:
+      'Articles and thoughts on software engineering, system design, and life-long learning.',
+    url: 'https://achievagemilang.dev/blogs',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: posts.length,
@@ -20,7 +25,7 @@ function BlogCollectionStructuredData({ posts }: { posts: Awaited<ReturnType<typ
         item: {
           '@type': 'BlogPosting',
           headline: post.title,
-          url: `https://achievagemilang.live/blogs/${post.slug}`,
+          url: `https://achievagemilang.dev/blogs/${post.slug}`,
           datePublished: new Date(post.date).toISOString(),
         },
       })),
@@ -39,20 +44,21 @@ export const metadata: Metadata = {
   title: 'Writes | Achieva Futura Gemilang',
   description:
     'Articles and thoughts on software engineering, system design, and life-long learning.',
-  keywords: 'software engineering, system design, programming, web development, technology blog, coding tutorials',
+  keywords:
+    'software engineering, system design, programming, web development, technology blog, coding tutorials',
   alternates: {
-    canonical: 'https://achievagemilang.live/blogs',
+    canonical: 'https://achievagemilang.dev/blogs',
   },
   openGraph: {
     title: 'Writes | Achieva Futura Gemilang',
     description:
       'Articles and thoughts on software engineering, system design, and life-long learning.',
-    url: 'https://achievagemilang.live/blogs',
+    url: 'https://achievagemilang.dev/blogs',
     type: 'website',
     siteName: 'Achieva Futura Gemilang',
     images: [
       {
-        url: 'https://achievagemilang.live/AGLogoRevamped.png',
+        url: 'https://achievagemilang.dev/AGLogoRevamped.png',
         width: 1200,
         height: 630,
         alt: 'Achieva Futura Gemilang - Blog Posts',
@@ -65,7 +71,7 @@ export const metadata: Metadata = {
     description:
       'Articles and thoughts on software engineering, system design, and life-long learning.',
     creator: '@achievagemilang',
-    images: ['https://achievagemilang.live/AGLogoRevamped.png'],
+    images: ['https://achievagemilang.dev/AGLogoRevamped.png'],
   },
 };
 

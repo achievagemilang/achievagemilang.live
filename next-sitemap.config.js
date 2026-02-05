@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://achievagemilang.live',
+  siteUrl: 'https://achievagemilang.dev',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ['/api/*', '/_next/*'],
@@ -12,7 +12,7 @@ module.exports = {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    additionalSitemaps: ['https://achievagemilang.live/sitemap.xml'],
+    additionalSitemaps: ['https://achievagemilang.dev/sitemap.xml'],
   },
   transform: async (config, path) => {
     // Custom priority and changefreq based on path
