@@ -57,9 +57,11 @@ export function createAiChatService(): AiChatService {
  */
 export function createNewsletterService() {
   const { NewsletterService } = require('@/application/services/newsletter.service');
-  const { UpstashNewsletterRepository } = require('../repositories/upstash-newsletter.repository');
+  const {
+    SupabaseNewsletterRepository,
+  } = require('../repositories/supabase-newsletter.repository');
 
-  const repository = new UpstashNewsletterRepository();
+  const repository = new SupabaseNewsletterRepository();
   const emailService = createEmailService();
   return new NewsletterService(repository, emailService);
 }
