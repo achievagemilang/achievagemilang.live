@@ -4,6 +4,7 @@ import BlogCard from '@/components/blogs/blog-card';
 import BlogCardSkeleton from '@/components/blogs/blog-card-skeleton';
 import SearchBar from '@/components/molecule/search-bar';
 import TagFilter from '@/components/molecule/tag-filter';
+import NewsletterForm from '@/components/shared/newsletter-form';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
@@ -132,6 +133,15 @@ export default function BlogClientPage({ posts }: PostsProps) {
   return (
     <div className="container mx-auto py-12">
       <h1 className="text-4xl font-bold mb-8">{t.blog.title}</h1>
+
+      {/* Newsletter Section */}
+      <div className="mb-8 p-6 bg-muted/50 rounded-lg border">
+        <div className="max-w-2xl mx-auto text-center">
+          <h3 className="text-xl font-semibold mb-2">{t.newsletter.heading}</h3>
+          <p className="text-sm text-muted-foreground mb-4">{t.newsletter.description}</p>
+          <NewsletterForm />
+        </div>
+      </div>
 
       {/* Search and Year Filter - Side by Side */}
       <div className="mb-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">

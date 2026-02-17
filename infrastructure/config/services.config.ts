@@ -52,6 +52,14 @@ export function createAiChatService(): AiChatService {
   return new AiChatService(aiService);
 }
 
+/**
+ * Create newsletter service with dependencies
+ */
+export function createNewsletterService() {
+  const { NewsletterService } = require('@/application/services/newsletter.service');
+  const { UpstashNewsletterRepository } = require('../repositories/upstash-newsletter.repository');
 
-
-
+  const repository = new UpstashNewsletterRepository();
+  const emailService = createEmailService();
+  return new NewsletterService(repository, emailService);
+}

@@ -158,6 +158,17 @@ export const en = {
       visitProject: 'Visit Project',
     },
   },
+  newsletter: {
+    heading: 'Stay Updated',
+    description: 'Get new posts delivered to your inbox.',
+    placeholder: 'your@email.com',
+    subscribe: 'Subscribe',
+    subscribing: 'Subscribing...',
+    success: 'Check your email to confirm your subscription!',
+    alreadySubscribed: 'You are already subscribed!',
+    error: 'Something went wrong. Please try again.',
+    rateLimited: 'Too many attempts. Please try again later.',
+  },
 };
 
 export type Dictionary = typeof en;

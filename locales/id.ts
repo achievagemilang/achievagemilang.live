@@ -160,4 +160,15 @@ export const id: Dictionary = {
       visitProject: 'Kunjungi Proyek',
     },
   },
+  newsletter: {
+    heading: 'Tetap Update',
+    description: 'Dapatkan tulisan terbaru langsung ke inbox Anda.',
+    placeholder: 'email@anda.com',
+    subscribe: 'Berlangganan',
+    subscribing: 'Berlangganan...',
+    success: 'Cek email Anda untuk konfirmasi langganan!',
+    alreadySubscribed: 'Anda sudah berlangganan!',
+    error: 'Terjadi kesalahan. Silakan coba lagi.',
+    rateLimited: 'Terlalu banyak percobaan. Silakan coba lagi nanti.',
+  },
 };

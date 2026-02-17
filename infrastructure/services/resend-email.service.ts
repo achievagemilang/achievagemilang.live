@@ -41,9 +41,71 @@ export class ResendEmailService implements IEmailService {
 
     return { id: data.id };
   }
+
+  async sendNewsletterConfirmation(email: string, confirmUrl: string): Promise<{ id: string }> {
+    const html = EmailTemplateService.generateNewsletterConfirmationTemplate(confirmUrl);
+
+    const { data, error } = await this.resend.emails.send({
+      from: this.fromEmail,
+      to: [email],
+      subject: 'Confirm your subscription - Achieva Gemilang',
+      html,
+    });
+
+    if (error) {
+      throw new Error(`Failed to send confirmation email: ${error.message || 'Unknown error'}`);
+    }
+
+    if (!data?.id) {
+      throw new Error('Confirmation email sent but no ID returned');
+    }
+
+    return { id: data.id };
+  }
+
+  async sendNewsletterWelcome(email: string): Promise<{ id: string }> {
+    const html = EmailTemplateService.generateNewsletterWelcomeTemplate();
+
+    const { data, error } = await this.resend.emails.send({
+      from: this.fromEmail,
+      to: [email],
+      subject: 'Welcome to the newsletter! - Achieva Gemilang',
+      html,
+    });
+
+    if (error) {
+      throw new Error(`Failed to send welcome email: ${error.message || 'Unknown error'}`);
+    }
+
+    if (!data?.id) {
+      throw new Error('Welcome email sent but no ID returned');
+    }
+
+    return { id: data.id };
+  }
+
+  async sendNewsletterDigest(
+    email: string,
+    posts: Array<{ title: string; excerpt: string; url: string; date: string }>,
+    unsubscribeUrl: string
+  ): Promise<{ id: string }> {
+    const html = EmailTemplateService.generateNewsletterDigestTemplate(posts, unsubscribeUrl);
+
+    const { data, error } = await this.resend.emails.send({
+      from: this.fromEmail,
+      to: [email],
+      subject: 'New posts from Achieva Gemilang',
+      html,
+    });
+
+    if (error) {
+      throw new Error(`Failed to send digest email: ${error.message || 'Unknown error'}`);
+    }
+
+    if (!data?.id) {
+      throw new Error('Digest email sent but no ID returned');
+    }
+
+    return { id: data.id };
+  }
 }
-
-
-
-
-
