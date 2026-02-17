@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { getDictionary } from '@/locales/get-dictionary';
+import { en } from '@/locales/en';
+import { id } from '@/locales/id';
 import { AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -13,7 +14,7 @@ interface PageProps {
 export default async function NewsletterStatusPage({ params, searchParams }: PageProps) {
   const { lang } = await params;
   const { type, message } = await searchParams;
-  const t = await getDictionary(lang);
+  const t = lang === 'id' ? id : en;
 
   const statusConfig = {
     confirmed: {

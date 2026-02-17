@@ -3,6 +3,7 @@ import Footer from '@/components/layout/footer';
 import GlobalAIChat from '@/components/layout/global-ai-chat';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 import { Toaster } from '@/components/ui/toaster';
 import { AIChatProvider } from '@/context/ai-chat-context';
 import { LanguageProvider } from '@/context/language-context';
@@ -59,6 +60,7 @@ export default async function RootLayout({
                 <Footer />
               </div>
               <Toaster />
+              <SonnerToaster />
               <GlobalAIChat />
             </LanguageProvider>
           </AIChatProvider>
