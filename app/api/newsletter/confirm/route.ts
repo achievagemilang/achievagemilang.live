@@ -20,7 +20,9 @@ export async function GET(request: NextRequest) {
 
     // Redirect to success page
     const locale = request.nextUrl.pathname.includes('/id/') ? 'id' : 'en';
-    return NextResponse.redirect(new URL(`/${locale}/blogs?subscribed=true`, request.url));
+    return NextResponse.redirect(
+      new URL(`/${locale}/newsletter/status?type=confirmed`, request.url)
+    );
   } catch (error) {
     console.error('Newsletter confirmation error:', error);
 
@@ -29,7 +31,7 @@ export async function GET(request: NextRequest) {
     // Redirect to error page with message
     return NextResponse.redirect(
       new URL(
-        `/${locale}/blogs?subscription_error=${encodeURIComponent(
+        `/${locale}/newsletter/status?type=error&message=${encodeURIComponent(
           error instanceof Error ? error.message : 'Confirmation failed'
         )}`,
         request.url

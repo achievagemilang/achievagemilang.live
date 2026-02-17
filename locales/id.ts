@@ -170,5 +170,20 @@ export const id: Dictionary = {
     alreadySubscribed: 'Anda sudah berlangganan!',
     error: 'Terjadi kesalahan. Silakan coba lagi.',
     rateLimited: 'Terlalu banyak percobaan. Silakan coba lagi nanti.',
+    status: {
+      confirmed: {
+        title: 'Langganan Dikonfirmasi!',
+        message: 'Selamat datang! Anda akan menerima tulisan terbaru di inbox Anda.',
+      },
+      unsubscribed: {
+        title: 'Berhenti Berlangganan',
+        message: 'Anda telah dihapus dari mailing list.',
+      },
+      error: {
+        title: 'Terjadi Kesalahan',
+        message: 'Silakan coba lagi atau hubungi kami jika masalah berlanjut.',
+      },
+      goToBlog: 'Ke Halaman Blog',
+    },
   },
 };

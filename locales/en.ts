@@ -168,6 +168,21 @@ export const en = {
     alreadySubscribed: 'You are already subscribed!',
     error: 'Something went wrong. Please try again.',
     rateLimited: 'Too many attempts. Please try again later.',
+    status: {
+      confirmed: {
+        title: 'Subscription Confirmed!',
+        message: "Welcome aboard! You'll receive new posts in your inbox.",
+      },
+      unsubscribed: {
+        title: 'Unsubscribed',
+        message: "You've been removed from the mailing list.",
+      },
+      error: {
+        title: 'Something Went Wrong',
+        message: 'Please try again or contact us if the issue persists.',
+      },
+      goToBlog: 'Go to Blog',
+    },
   },
 };
 
