@@ -64,7 +64,7 @@ export class EmailTemplateService {
           </p>
         </div>
         <p style="color: #999; font-size: 12px; text-align: center; margin-top: 20px;">
-          This email was sent from Achieva Gemilang's Portfolio
+          This email was sent from Achieva Gemilang's Personal Website
         </p>
       </div>
     `;

@@ -12,7 +12,7 @@ import { ResendEmailService } from '../services/resend-email.service';
  */
 export function createEmailService(): ResendEmailService {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = 'Portfolio Contact <onboarding@resend.dev>';
+  const fromEmail = 'Achieva Gemilang <cip@achievagemilang.dev>';
   const toEmail = 'achievafuturagemilang@gmail.com';
 
   if (!apiKey) {
